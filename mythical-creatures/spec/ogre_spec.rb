@@ -1,5 +1,6 @@
-require './spec/spec-helper'
+require 'rspec'
 require './lib/ogre'
+require 'pry'
 
 RSpec.describe Ogre do
   it 'has a name' do
@@ -73,13 +74,13 @@ RSpec.describe Ogre do
     expect(human.notices_ogre?).to be true
   end
 
-  it 'hits the human every second time it swings' do
+  it 'hits the human every second time xit swings' do
     ogre = Ogre.new('Brak')
     human = Human.new
 
     6.times { ogre.encounter(human) }
 
-    expect(ogre.encounter_counter).to eq(6)
+    expect(human.encounter_counter).to eq(6)
     expect(ogre.swings).to eq(2)
     expect(human.knocked_out?).to be true
   end
